@@ -23,11 +23,11 @@ Both instances will be automatically replaced in case of termination by ASG and 
 ## Known issues and workarounds
 1. Route53 Record set values are added in random order, this means that by default traffic could be sent to second instance
 
-Temporary solution is to stop `radiusd` service on first instance, wait for alarm and than start service
+    Temporary solution is to stop `radiusd` service on first instance, wait for alarm and than start service
 
-This will make first instance default target for traffic
+    This will make first instance default target for traffic
 
-Permanent fix be Route53 Record Set should be removed from CloudFormation and implemented as CI step using either CLI or SDK
+    Permanent fix to implement: Route53 Record Set should be removed from CloudFormation and implemented as CI step using either CLI or SDK
 
 2. Route53 Traffic policy is more advanced than routing policy in record, but it's not available in CloudFormation
 
